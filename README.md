@@ -1,7 +1,7 @@
 # CockBuster
 API for Personal Project
 
-##Tech Stack
+## Tech Stack
 Golang + Gin-Gonic + Gorm + MYSQL for Backend
 ReactJS for frontend
 PyTorch for ML Recommendation system
