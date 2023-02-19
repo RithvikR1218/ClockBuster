@@ -2,9 +2,11 @@ package main
 
 import (
 	//"errors"
-	"fmt"
+
+	"clockbuster/src/api/controllers"
 	"os"
 	//"net/http"
+
 
 	"github.com/gin-gonic/gin"
 	"clockbuster/src/database/config"
@@ -13,10 +15,9 @@ import (
 func main() {
 
 	r := gin.Default()
-	//r.GET("/", func(c *gin.Context) {})
-	port := os.Getenv("PORT")
 	config.InitDB()
-	fmt.Println("Server Runing on localhost:" + port)
-	r.Run(":" + port)
-	// fmt.Println("God damn it work bitch")
+
+	r.GET("/user", controllers.GetUsers) // new
+	port := os.Getenv("PORT")
+	r.Run("localhost:"+port)
 }
